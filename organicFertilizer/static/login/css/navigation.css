@@ -1,0 +1,288 @@
+:root{
+    font-size: 16px;
+     font-family: 'Source Sans Pro';
+     --text-primary: #E5E5E5;
+     --text-secondary: #D0AC6E;
+     --bg-primary:#060608;
+     --bg-secondary:#424249;
+   }
+.navigations{
+    position: fixed;
+    padding: 1rem;
+	width: calc(100% - 16rem);
+	right: 0;
+    background-color:var(--bg-primary);
+    height: 4.5rem;
+	align-items: right;
+
+	
+}
+.navborder{
+	position: absolute;
+	right: 10rem;
+	left: 0rem;
+	width: calc(100% - 14rem);
+	bottom: 0.5rem;
+	border-bottom: 0.01rem solid var(--bg-secondary);
+}
+.topnav {
+	display: fixed;
+	float: right;
+	align-items: center;
+	align-content: center;
+	margin-top: .5rem;
+	text-align: right;
+	width: 35rem;
+	overflow: hidden;
+	flex-direction: row;
+	height: 2.5rem;
+	background-color: transparent;
+  }
+
+ .bellicon{
+	display: flex;
+	float: right;
+	outline: none;
+	transition: ease 0.2s;
+	margin : 0.5rem 0.5rem 0.2rem 0.2rem;
+	margin-left: 1rem;
+	
+ }
+
+.bellicon:hover #bell{
+fill: var(--text-primary);
+}
+.searchform{
+	display: flex;
+	float: right;
+	align-content: center;
+}
+.searchform input[type="text"] {
+	height: 2rem;
+	margin-top: 0.2rem;
+	position: absolute;
+	font-size: 1rem;
+	display: flex;
+	border: none;
+	border-radius: 2rem;
+	line-height: 1rem;
+	outline: none;
+	color: var(--text-primary);
+	padding: 0.1rem;
+	padding-left:1rem;
+	right: 11.5rem;
+	padding-right: 2rem;
+	width: 0;
+	float: right;
+	background:transparent;
+	z-index: 3;
+	transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+	cursor: pointer;
+  }
+  
+  .searchform input[type="text"]::-webkit-input-placeholder{
+	  	position: absolute;
+	  	transform: translateY(15rem);
+		opacity: 0;
+		transition: 0.5s;
+  }
+  .searchform input[type="text"]:focus::-webkit-input-placeholder{
+	opacity: 1;
+	transform: translateY(0);	
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+.searchform input[type="text"]:focus {
+	width: 50%;
+	background: var(--bg-secondary);
+	z-index: 1;
+	cursor: text;
+  }
+  .searchform input[type="submit"] {
+	height: 2rem;
+	width: 2rem;
+	margin-top: 0.3rem;
+	display: flex;
+	border: none;
+	border-radius: 2rem;
+	float: right;
+	z-index: 2;
+	cursor: pointer;
+	transition:  .4s ease;
+  }
+  
+  .searchform input[type="submit"]:hover {
+	opacity: 0.5;
+  }
+  .dropdown {
+	float: right;
+	padding-bottom: 0.5rem;
+	margin-left: 1rem;
+	cursor: pointer;
+	margin-bottom: 0.5rem;
+	overflow: hidden;
+	
+  }
+  .dropdown a {
+	float: right;
+	font-size: 1rem;
+	color: var(--text-primary);
+	text-align: center;
+	padding: 0.5 0.8rem;
+	text-decoration: none;
+	transition: all ease 0.2s;
+  }
+
+  .dropdown .dropbtn {
+	font-size: 1rem;
+	cursor: pointer;
+	
+	min-width: 7rem;
+	text-align: center;
+	color: var(--bg-secondary);
+	border: solid 0.08rem;
+	border-color: var(--bg-secondary);
+	padding: 0.5rem 0.8rem;
+	transition: all ease 0.1s;
+	background-color: inherit;
+	font-family: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+	border-color: var(--bg-primary);
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+	color: var(--bg-secondary);
+	position: absolute;
+	background-color: var(--bg-primary);
+	max-width: 7rem;
+	border: solid 0.08rem;
+	border-color: var(--bg-secondary);
+	z-index: 1;
+	transition: all ease 0.2s;
+	transform-origin: top;
+	transform: scaleY(0);
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	float: none;
+	font-size: 1rem;
+	color: var(--bg-secondary);
+	padding: 0.5rem 0.8rem;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	transition: all 0.2s;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+	color: var(--text-primary);
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+	transform: scaleY(1);
+	
+  }
+.topics{
+	margin-left: 0.5rem;
+	visibility: collapse;
+	bottom: 0.6rem;
+	position: absolute;
+	left: 0rem;
+	font-size: 1.3rem;
+	color: var(--text-primary);
+}
+.postfilter{
+bottom: 0.6rem;
+transition: ease 0.2s;
+position: absolute;
+left: 0rem;
+}
+#postfilter{
+	cursor: pointer;
+}
+#postfilter:hover #filter-2{
+fill: var(--text-primary);
+}
+
+.filterdrop{
+	transform-origin: top;
+	transform:scaleY(0);
+	transition: ease 0.2s;
+	color: var(--bg-secondary);
+	position: absolute;
+	background-color: var(--bg-primary);
+	max-width: fit-content;
+	border: solid 0.08rem;
+	z-index: 1;
+	border-top: none;
+	border-color: var(--bg-secondary);
+}
+.filterdrop a{
+	float: none;
+	font-size: 1rem;
+	color: var(--bg-secondary);
+	margin-left: 0.5rem;
+	padding-right: 0.2rem;
+	margin-top: 0.2rem;
+	text-decoration: none;
+	transition: ease 0.2s;
+	display: block;
+	text-align: left;}
+.filterdrop .sortby{
+	display: block;
+	margin-top: 0.2rem;
+	margin-left: 0.5rem;
+	font-size: 1.2rem;
+	color: var(--text-primary);
+	padding-bottom: 0.3rem;
+}
+.filterdrop .botborder{
+	transition: ease 0.2s;
+	position: absolute;
+	width: 80%;
+	border-bottom:solid 0.1rem var(--text-primary);
+	margin-left: 0.5rem;
+}
+
+.postfilter:hover .filterdrop{
+	transform:scaleY(1);
+}
+.filterdrop a:hover {
+	color: var(--text-primary);
+}
+
+
+@media only screen and (max-width:600px){
+    .navigations{
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 0;
+	}
+	.searchform input[type="text"]:focus {
+		width: 30%;
+	}
+    .searchform input[type="text"]{
+		right: 10.5rem;
+	}
+	.topnav{
+		margin: 0;
+	}
+	.navborder{
+		display: none;
+	}
+	.postfilter{
+		margin-left: 0.5rem;
+	}
+}
